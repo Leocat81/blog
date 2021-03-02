@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "vuepress": "^1.8.2"
+  },
+  "dependencies": {
+    "vuepress-plugin-gotop-plus": "^1.0.4",
+    "vuepress-plugin-helper-live2d": "^1.0.2"
   }
 }

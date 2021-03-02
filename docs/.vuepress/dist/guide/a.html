@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>普通函数和构造函数区别 | 个人日记</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Adroi">
+    
+    <link rel="preload" href="/pipe_blog/assets/css/0.styles.81384e38.css" as="style"><link rel="preload" href="/pipe_blog/assets/js/app.ff076178.js" as="script"><link rel="preload" href="/pipe_blog/assets/js/2.a68d8d3f.js" as="script"><link rel="preload" href="/pipe_blog/assets/js/10.7da53139.js" as="script"><link rel="prefetch" href="/pipe_blog/assets/js/3.84dea7ae.js"><link rel="prefetch" href="/pipe_blog/assets/js/4.50359bc3.js"><link rel="prefetch" href="/pipe_blog/assets/js/5.9ebeb8ad.js"><link rel="prefetch" href="/pipe_blog/assets/js/6.357dcc01.js"><link rel="prefetch" href="/pipe_blog/assets/js/7.75ead8f2.js"><link rel="prefetch" href="/pipe_blog/assets/js/8.6d694223.js"><link rel="prefetch" href="/pipe_blog/assets/js/9.8eb59678.js">
+    <link rel="stylesheet" href="/pipe_blog/assets/css/0.styles.81384e38.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/pipe_blog/" class="home-link router-link-active"><!----> <span class="site-name">个人日记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>ECMAScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pipe_blog/guide/" aria-current="page" class="sidebar-link">手写 Promise</a></li><li><a href="/pipe_blog/guide/a.html" aria-current="page" class="active sidebar-link">普通函数和构造函数区别</a></li><li><a href="/pipe_blog/guide/prototype.html" class="sidebar-link">理解原型对象</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Group 2</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="普通函数和构造函数区别"><a href="#普通函数和构造函数区别" class="header-anchor">#</a> 普通函数和构造函数区别</h1> <ul><li><p>构造函数也是一个普通函数，创建方式和普通函数一样，但构造函数习惯上首字母大写</p></li> <li><p>构造函数和普通函数的区别在于：调用方式不一样。作用也不一样（构造函数用来新建实例对象）</p></li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> job</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>job <span class="token operator">=</span> job<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">sayName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">&quot;somebody&quot;</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">,</span> <span class="token string">&quot;tyloo&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//构造函数调用</span>
+person<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">Person</span><span class="token punctuation">(</span><span class="token string">&quot;niko&quot;</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token string">&quot;faze&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//普通函数调用</span>
+global<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//this此时代指global(在浏览器是window)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>当在全局作用域调用一个函数是,this对象始终指向Global(在浏览器是window)</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pipe_blog/guide/" class="prev router-link-active">
+        手写 Promise
+      </a></span> <span class="next"><a href="/pipe_blog/guide/prototype.html">
+        理解原型对象
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><div id="live2d-widget" class="live2d-widget-container" style="position:fixed;right:65px;bottom:0px;width:135px;height:300px;z-index:99999;opacity:0.8;pointer-events:none;"><canvas id="live2d_canvas" width="135" height="300" class="live2d_canvas" style="position:absolute;left:0px;top:0px;width:135px;height:300px;"></canvas></div><!----></div></div>
+    <script src="/pipe_blog/assets/js/app.ff076178.js" defer></script><script src="/pipe_blog/assets/js/2.a68d8d3f.js" defer></script><script src="/pipe_blog/assets/js/10.7da53139.js" defer></script>
+  </body>
+</html>
