@@ -1,8 +1,11 @@
 ---
 home: true
-heroImage: /img/logo.png
-heroText: pipe # 首页的标题内容
-actionText: 开始阅读 →
+heroImage: /img/panda4.png
+heroText: Hi,我是 pipe
+tagline: 😃 欢迎大家来到我的博客 😃
+actionText: "👉 开始阅读 👈 "
 actionLink: /guide/
-footer: sijunfeng | Copyright © 2021-present Evan You # 为底部内容，与普通的网页一样，我们可以在footer里面写版权信息
+pageClass: custom-page-class
 ---
+
+<Vssue :title="$title" />

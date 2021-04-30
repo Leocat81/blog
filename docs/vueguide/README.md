@@ -32,7 +32,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .box {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -103,11 +103,11 @@ createElement(
 ```
 
 <p class="codepart-title"> → <a href="https://cn.vuejs.org/v2/guide/render-function.html#createElement-%E5%8F%82%E6%95%B0">查看官网示例</a></p>
-TODO:介绍createElement如何绑定元素，事件及其他处理11
+TODO:介绍createElement如何绑定元素，事件及其他处理
 
 ## JSX
 
-<style>
+<style scoped>
 .codepart-title{
  text-align:center;
  color:dodgerblue
